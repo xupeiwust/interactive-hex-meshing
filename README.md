@@ -29,9 +29,9 @@ In addition,
 ## Dependencies
 Main dependencies that are not included in the repo and should be installed first:
 - CMake
-- CUDA (tested with 11.2, 11.3, 11.4, 11.5) and cuDNN
-- Pytorch C++ frontend (tested with 1.7, 1.8, 1.9, 1.10)
-- Vulkan SDK
+- CUDA (tested with 11.x, 12.x) and cuDNN
+- Pytorch C++ frontend (tested with 1.7, 1.8, 1.9, 1.10, 2.0)
+- Vulkan SDK (no mather which version)
 - Python3
 - HDF5
 
@@ -47,7 +47,7 @@ There are additional dependencies in `external` and should be built correctly wi
 - yaml-cpp
 
 ## Linux Instruction
-The instruction is slightly different on various Linux distributions. We have tested on Arch Linux and Ubuntu 20.04.
+The instruction is slightly different on various Linux distributions. We have tested on Arch Linux and Ubuntu 20.04 and 22.04.
 First install all dependencies above using the respective package manager. 
 Then download and unzip [Pytorch C++ frontend](https://pytorch.org/get-started/locally/) for Linux (tested with cxx11 ABI) -- it should be under the tab `Libtorch > C++/Java > CUDA 11.x`.
 Add `Torch_DIR=<unzipped folder>` to your environment variable lists (or add your unzipped folder to `CMAKE_PREFIX_PATH`).
@@ -64,7 +64,7 @@ See `CMakeLists.txt` for more information.
 
 
 ## Windows Instruction
-Compiling on Windows is trickier than on Linux. The following procedure has been tested to work on multiple Windows machines.
+Compiling on Windows is trickier than on Linux. The following procedure has been tested to work on multiple Windows machines. (there are some compatibility issues on Windows, preferably use Ubuntu)
 - Download and install Visual Studio 2019
 - Download and install the newest CUDA Toolkit (tested with 11.2)
 - Download and install cuDNN for Windows (this amounts to copying a bunch of `dll`'s to the CUDA path)
